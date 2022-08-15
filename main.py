@@ -15,13 +15,6 @@ app = FastAPI()
 def adicionar_item(item: Item):
     banco_dados.append(item)
     return item
-    #dar append no banco de dados com item e retornar o item
-
-"""
-@app.post("/")
-def read_root(user_agent:Optional [str] = Header(None)):
-    return {"Hello": "World"}
-"""
 
 @app.get("/items/{item_quantidade}")
 def read_item(item_quantidade: int):
@@ -37,7 +30,6 @@ def add_item(novo_item: Item):
     valor_total = 0
     for item in banco_dados:
         valor_total += item.valor
-        # realizar a soma 
     return valor_total
 
 
